@@ -1,8 +1,6 @@
-
-app.get('/', function (req, res) {
-  res.send('Hi antony!');
-});
-
-app.listen(80, function () {
-  console.log('Example app listening on port 80!');
-});
+var http = require('http')
+var port = process.env.PORT || 80;
+http.createServer(function(req, res) {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello World\n');
+}).listen(port);
